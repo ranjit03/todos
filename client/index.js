@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from "redux-thunk";
+import { Provider } from "react-redux";
 
 import App from "./components/App";
 import reducers from "./reducers";
@@ -13,5 +14,10 @@ const store = createStore(
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(<App />, document.getElementById("app"));
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById("app")
+  );
 });
