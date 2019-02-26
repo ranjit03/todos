@@ -33,11 +33,11 @@ class App extends React.Component {
           <option value="home">Home</option>
           <option value="misc">Misc</option>
         </select>
-        {/* <ul>
+        <ul>
           {this.props.todos.map(todo => {
-            return <li>{todo.task.text}</li>;
+            return <li>{todo.task}</li>;
           })}
-        </ul> */}
+        </ul>
       </div>
     );
   }
@@ -46,7 +46,7 @@ class App extends React.Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    todos: state.todos
+    todos: state.completed
   };
 };
 
